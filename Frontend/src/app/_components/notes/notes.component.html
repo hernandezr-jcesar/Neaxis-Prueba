@@ -1,1 +1,87 @@
-<p>notes works!</p>
+<div class="row align-items-center">
+  <div class="col-5 d-flex justify-content-start titulo">
+    <h2>NOTAS</h2>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-1"></div>
+  <!-- NOTAS -->
+  <div class="col-10 notes-container">
+    <p *ngIf="notes.length == 0" class="notas_vacio">
+      No hay ninguna Nota, agrega una con el boton:
+      <img src="../../../../assets/notes/Agregar.png" class="imagen_boton" />
+    </p>
+    <ul class="list-group list-group-flush">
+      <li
+        class="list-group-item note-item"
+        *ngFor="let note of notes"
+        (click)="onNoteClick(note)"
+        [ngClass]="{ selected: note === selectedNote }"
+      >
+        <div class="note-header">
+          <h3>{{ note.title }}</h3>
+          <p>{{ note.description }}</p>
+          <div class="note-date-container">
+            <p class="note-date">
+              Fecha de Creación: {{ note.createdAt | date : "mediumDate" }}
+              {{ note.createdAt | date : "shortTime" }}
+            </p>
+            <p>|</p>
+            <p class="note-date">
+              Ultima Modificación:
+              {{ note.updatedAt | date : "mediumDate" }}
+              {{ note.updatedAt | date : "shortTime" }}
+            </p>
+          </div>
+        </div>
+
+        <div *ngIf="selectedNote" class="selected-note-indicator"></div>
+      </li>
+    </ul>
+  </div>
+  <!-- BOTONES -->
+  <div class="col-1">
+    <div class="row align-items-center">
+      <div class="col-12 d-flex justify-content-center">
+        <a class="boton nav-link" (click)="onAddNoteClick()"
+          ><img
+            src="../../../../assets/notes/Agregar.png"
+            alt="Logo"
+            class="imagen_boton"
+          />
+          Agregar</a
+        >
+      </div>
+
+      <!-- <div class="col-12 d-flex justify-content-center" *ngIf="showButtons">
+        <a class="boton nav-link" (click)="onSeeNoteClick()"
+          ><img
+            src="../../../../assets/notes/Ver.png"
+            alt="Logo"
+            class="imagen_boton"
+          />Ver</a
+        >
+      </div> -->
+      <div class="col-12 d-flex justify-content-center" *ngIf="showButtons">
+        <a class="boton nav-link" (click)="onEditNoteClick()"
+          ><img
+            src="../../../../assets/notes/Editar.png"
+            alt="Logo"
+            class="imagen_boton"
+          />
+          Editar</a
+        >
+      </div>
+      <div class="col-12 d-flex justify-content-center" *ngIf="showButtons">
+        <a class="boton nav-link" (click)="onDeleteNoteClick()"
+          ><img
+            src="../../../../assets/notes/Eliminar.png"
+            alt="Logo"
+            class="imagen_boton"
+          />Eliminar</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

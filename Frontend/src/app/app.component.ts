@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StorageService } from './_services/storage.service';
 import { AuthService } from './_services/auth.service';
+import { ToastMessageService } from './_services/toast-message.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent {
   nombre_usuario?: string;
   constructor(
     private storageService: StorageService,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastMessageService: ToastMessageService
   ) {}
 
   ngOnInit(): void {
@@ -37,5 +39,12 @@ export class AppComponent {
         console.log(err);
       },
     });
+  }
+  BotonCerrarSesion() {
+    this.logout();
+    this.showToaster('!Cerraste Sesión!', 'Info');
+  }
+  showToaster(mensaje: string, tipo: string) {
+    this.toastMessageService.showtoast(mensaje, tipo);
   }
 }

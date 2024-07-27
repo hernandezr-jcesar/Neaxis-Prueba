@@ -77,59 +77,25 @@
             routerLinkActive="active"
           >
             <li class="nav-item">
-              <a href="/notes" class="boton nav-link" routerLink="notes"
+              <a class="boton nav-link" href="/notes"
                 ><img
-                  src="../assets/navbar/Notas.png"
+                  src="../assets/img/Notas.png"
                   alt="Logo"
                   width="50"
                   height="50"
                   class="d-inline-block align-text-center mr-3 icono"
-                />Notas</a
+                />Ir a Notas</a
               >
             </li>
             <li class="nav-item">
-              <a class="boton nav-link" routerLink="tasks/eisenhower"
+              <a class="boton nav-link" (click)="BotonCerrarSesion()" href=""
                 ><img
-                  src="../assets/navbar/Tareas.png"
+                  src="../assets/img/Cerrar Sesion.png"
                   alt="Logo"
                   width="50"
                   height="50"
                   class="d-inline-block align-text-center mr-3 icono"
-                />Tareas</a
-              >
-            </li>
-
-            <li class="nav-item">
-              <a class="boton nav-link" routerLink="metrics"
-                ><img
-                  src="../assets/navbar/Metricas.png"
-                  alt="Logo"
-                  width="50"
-                  height="50"
-                  class="d-inline-block align-text-center mr-3 icono"
-                />Metricas</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="boton nav-link" routerLink="config"
-                ><img
-                  src="../assets/navbar/Configuracion.png"
-                  alt="Logo"
-                  width="50"
-                  height="50"
-                  class="d-inline-block align-text-center mr-3 icono"
-                />Configuración</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="boton nav-link" routerLink="profile"
-                ><img
-                  src="../assets/navbar/Profile.png"
-                  alt="Logo"
-                  width="50"
-                  height="50"
-                  class="d-inline-block align-text-center mr-3 icono"
-                />Cuenta</a
+                />Salir del Sistema</a
               >
             </li>
           </ul>

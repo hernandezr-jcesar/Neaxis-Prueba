@@ -72,6 +72,7 @@ const postNotes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             userId: joi_1.default.number().required(),
         });
         const { createdAt, title, description, userId } = req.body;
+        console.log(req.body);
         const { error } = schema.validate(req.body);
         if (error) {
             return res.status(400).json({ error: error.details[0].message });

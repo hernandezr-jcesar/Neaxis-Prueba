@@ -64,6 +64,7 @@ const postNotes = async (req: Request, res: Response) => {
     });
 
     const { createdAt, title, description, userId } = req.body;
+    console.log(req.body);
 
     const { error } = schema.validate(req.body);
     if (error) {

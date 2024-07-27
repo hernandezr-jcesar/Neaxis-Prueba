@@ -8,6 +8,7 @@ import defaultRouter from "./routes/default.routes";
 import authRouter from "./routes/auth.routes";
 import noteRouter from "./routes/note.routes";
 
+
 interface UserBasicInfo {
   idUser: number;
   username: string;
